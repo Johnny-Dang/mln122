@@ -86,7 +86,7 @@ export default function Chapter5() {
               {/* Clickable header — uses <button> for reliable single-click */}
               <button
                 type="button"
-                onClick={() => toggle(i)}
+                onClick={(e) => { e.stopPropagation(); toggle(i); }}
                 style={{
                   display: "flex",
                   alignItems: "center",

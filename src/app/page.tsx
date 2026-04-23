@@ -142,8 +142,8 @@ export default function Home() {
                 }}
                 onClick={() => (isFlipped ? prevPage() : nextPage())}
               >
-                <div className="page-front">{sheet.front}</div>
-                <div className="page-back">{sheet.back}</div>
+                <div className="page-front" onClick={(e) => e.stopPropagation()}>{sheet.front}</div>
+                <div className="page-back" onClick={(e) => e.stopPropagation()}>{sheet.back}</div>
               </div>
             );
           })}
