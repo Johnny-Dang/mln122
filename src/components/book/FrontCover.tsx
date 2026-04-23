@@ -36,7 +36,7 @@ export default function FrontCover() {
       {/* Nội dung chính — căn giữa bìa (khung + flourish là position:absolute) */}
       <div className="cover-hero">
         <h1 className="title-abhaya">
-          Kinh tế Chính Trị
+          <span style={{ whiteSpace: "nowrap" }}>Kinh tế Chính Trị</span>
           <br />
           Mac-Lênin
         </h1>
