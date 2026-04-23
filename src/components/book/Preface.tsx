@@ -146,7 +146,10 @@ export default function Preface() {
           </ul>
         </section>
 
-        <p className="page-number page-number--preface-scroll" aria-label="Số trang">
+        <p
+          className="page-number page-number--preface-scroll"
+          aria-label="Số trang"
+        >
           Trang 1
         </p>
       </div>
