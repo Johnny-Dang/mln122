@@ -36,7 +36,7 @@ export default function FrontCover() {
       {/* Nội dung chính — căn giữa bìa (khung + flourish là position:absolute) */}
       <div className="cover-hero">
         <h1 className="title-abhaya">
-          <span style={{ whiteSpace: "nowrap" }}>Kinh tế Chính Trị</span>
+          <span className="cover-title-no-wrap">Kinh tế Chính Trị</span>
           <br />
           Mac-Lênin
         </h1>
@@ -47,9 +47,10 @@ export default function FrontCover() {
           <span className="cover-divider-line" />
         </div>
 
-        <p className="cover-subtitle">
+        <p className="cover-subtitle cover-subtitle--single-line">
           Khám phá qua những lăng kính Ethereal Wisdom
         </p>
+        <p className="cover-group-info">MLN122-Group1</p>
       </div>
 
       {/* Bottom Flourish */}
