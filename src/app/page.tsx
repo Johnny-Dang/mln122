@@ -82,7 +82,7 @@ export default function Home() {
                 className={`book-sheet ${isFlipped ? 'flipped' : ''}`}
                 style={{ 
                   zIndex,
-                  transform: `rotateY(${isFlipped ? -180 : 0}deg) translateZ(${isFlipped ? index * 2 : (sheets.length - index) * 2}px)`
+                  transform: `rotateY(${isFlipped ? -180 : 0}deg) translateZ(${isFlipped ? -index * 2 : (sheets.length - index) * 2}px)`
                 }}
                 onClick={() => isFlipped ? prevPage() : nextPage()}
               >
