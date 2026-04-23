@@ -82,9 +82,9 @@ export default function Chapter1() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <h2 className="chapter-title" style={{ fontSize: '1.6rem', marginBottom: '1.2rem', lineHeight: '1.4' }}>
-        I. Nền tảng lý thuyết<br/>
+        I. Nền tảng lý thuyết về Hội nhập Kinh tế Quốc tế<br/>
         <span style={{ fontSize: '1.1rem', color: 'var(--text-light)', fontWeight: 'normal', fontStyle: 'italic', display: 'block', marginTop: '0.3rem' }}>
-          • Hội nhập KTQT: phương hướng nâng cao hiệu quả
+          1. Nâng cao hiệu quả Hội nhập KTQT
         </span>
       </h2>
       

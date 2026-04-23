@@ -13,7 +13,7 @@ export default function Chapter2() {
   const sections = [
     {
       id: 1,
-      title: "1. Cơ sở lý luận (Theory)",
+      title: "2.1. Cơ sở lý luận Mác - Lênin",
       content: (
         <ul style={{ paddingLeft: '0', margin: '0', listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
           <li><strong style={{ color: 'var(--accent-blue)' }}>• Kinh tế chính trị Mác – Lênin:</strong> Kinh tế là cơ sở hạ tầng (đóng vai trò quyết định).</li>
@@ -24,7 +24,7 @@ export default function Chapter2() {
     },
     {
       id: 2,
-      title: "2. Vai trò của sự kết hợp (Implication)",
+      title: "2.2. Vai trò của sự kết hợp",
       content: (
         <ul style={{ paddingLeft: '0', margin: '0', listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
           <li><strong style={{ color: 'var(--accent-blue)' }}>• Bảo vệ chủ quyền, an ninh quốc gia:</strong> Giữ vững độc lập, toàn vẹn lãnh thổ.</li>
@@ -39,9 +39,9 @@ export default function Chapter2() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <h2 className="chapter-title" style={{ fontSize: '1.6rem', marginBottom: '1.2rem', lineHeight: '1.4' }}>
-        I. Nền tảng lý thuyết<br/>
+        I. Nền tảng lý thuyết về Hội nhập Kinh tế Quốc tế<br/>
         <span style={{ fontSize: '1.1rem', color: 'var(--text-light)', fontWeight: 'normal', fontStyle: 'italic', display: 'block', marginTop: '0.3rem' }}>
-          • Kết hợp KT với quốc phòng, an ninh, đối ngoại
+          2. Kết hợp Kinh tế với Quốc phòng, An ninh và Đối ngoại
         </span>
       </h2>
       
@@ -184,7 +184,7 @@ export default function Chapter2() {
                alignItems: 'center',
                gap: '0.4rem'
              }}>
-                <span style={{ fontSize: '1.2rem' }}>📌</span> 3. Thực tiễn Việt Nam (Example)
+                <span style={{ fontSize: '1.2rem' }}>📌</span> 2.3. Thực tiễn tại Việt Nam
              </h4>
              <div style={{ 
                color: 'var(--text-main)', 
