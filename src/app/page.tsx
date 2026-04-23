@@ -8,6 +8,7 @@ import Chapter2 from '@/components/book/Chapter2';
 import Chapter3 from '@/components/book/Chapter3';
 import Chapter4 from '@/components/book/Chapter4';
 import Chapter5 from '@/components/book/Chapter5';
+import Chapter6 from '@/components/book/Chapter6';
 import BackCover from '@/components/book/BackCover';
 
 export default function Home() {
@@ -32,6 +33,11 @@ export default function Home() {
     {
       id: 3,
       front: <Chapter5 />,
+      back: <Chapter6 />
+    },
+    {
+      id: 4,
+      front: <BackCover />,
       back: <BackCover />
     }
   ];
@@ -74,6 +80,7 @@ export default function Home() {
           {sheets.map((sheet, index) => {
             const isFlipped = currentSpread > index;
             // Calculate zIndex so front sheets are on top when not flipped, and back sheets on top when flipped
+            // Flipped: higher index = larger z-index (on top). Unflipped: lower index = on top.
             const zIndex = isFlipped ? index : sheets.length - index;
             
             return (
@@ -82,14 +89,16 @@ export default function Home() {
                 className={`book-sheet ${isFlipped ? 'flipped' : ''}`}
                 style={{ 
                   zIndex,
-                  transform: `rotateY(${isFlipped ? -180 : 0}deg) translateZ(${isFlipped ? index * 2 : (sheets.length - index) * 2}px)`
+                  // After rotateY(-180deg) the local Z-axis flips, so -(index*2) becomes
+                  // +(index*2) in world space — the highest-index flipped sheet is closest.
+                  transform: `rotateY(${isFlipped ? -180 : 0}deg) translateZ(${isFlipped ? -(index * 2) : (sheets.length - index) * 2}px)`
                 }}
                 onClick={() => isFlipped ? prevPage() : nextPage()}
               >
-                <div className="page-front">
+                <div className="page-front" onClick={e => e.stopPropagation()}>
                   {sheet.front}
                 </div>
-                <div className="page-back">
+                <div className="page-back" onClick={e => e.stopPropagation()}>
                   {sheet.back}
                 </div>
               </div>
