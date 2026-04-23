@@ -19,7 +19,7 @@ export default function FrontCover() {
         <svg width="200" height="30" viewBox="0 0 200 30" fill="none">
           <path
             d="M10,15 Q50,0 100,15 T190,15"
-            stroke="var(--text-main)"
+            stroke="var(--text-gold-bright)"
             strokeWidth="1"
             fill="none"
           />
@@ -29,7 +29,7 @@ export default function FrontCover() {
             strokeWidth="1.5"
             fill="none"
           />
-          <circle cx="100" cy="15" r="4" fill="var(--text-main)" />
+          <circle cx="100" cy="15" r="4" fill="var(--text-gold-bright)" />
         </svg>
       </div>
 
@@ -57,7 +57,7 @@ export default function FrontCover() {
         <svg width="200" height="30" viewBox="0 0 200 30" fill="none">
           <path
             d="M10,15 Q50,30 100,15 T190,15"
-            stroke="var(--text-main)"
+            stroke="var(--text-gold-bright)"
             strokeWidth="1"
             fill="none"
           />
@@ -67,7 +67,7 @@ export default function FrontCover() {
             strokeWidth="1.5"
             fill="none"
           />
-          <circle cx="100" cy="15" r="4" fill="var(--text-main)" />
+          <circle cx="100" cy="15" r="4" fill="var(--text-gold-bright)" />
         </svg>
       </div>
     </div>
