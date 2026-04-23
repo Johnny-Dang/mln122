@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 export default function ChapterI1() {
   const [openSections, setOpenSections] = useState<Set<number>>(
@@ -36,7 +37,7 @@ export default function ChapterI1() {
             <strong style={{ color: "var(--chapter-text)" }}>
               • Góc nhìn toàn diện:
             </strong>{" "}
-            Không chỉ thấy "Màu hồng" (thị trường, vốn, công nghệ).
+            Không chỉ thấy &quot;Màu hồng&quot; (thị trường, vốn, công nghệ).
           </li>
           <li>
             <strong style={{ color: "var(--chapter-text)" }}>
@@ -110,7 +111,7 @@ export default function ChapterI1() {
           </li>
           <li>
             <strong style={{ color: "var(--chapter-text)" }}>
-              • Tuân thủ "Luật chơi chung":
+              • Tuân thủ &quot;Luật chơi chung&quot;:
             </strong>{" "}
             Cắt giảm thuế quan, mở cửa thị trường.
           </li>
@@ -176,7 +177,7 @@ export default function ChapterI1() {
             <strong style={{ color: "var(--chapter-text)" }}>
               • Nguy cơ:
             </strong>{" "}
-            Hội nhập kém &rarr; Thua ngay trên "sân nhà".
+            Hội nhập kém &rarr; Thua ngay trên &quot;sân nhà&quot;.
           </li>
           <li>
             <strong style={{ color: "var(--chapter-text)" }}>
@@ -461,8 +462,8 @@ export default function ChapterI1() {
                 marginBottom: "1rem",
               }}
             >
-              Việt Nam áp dụng "Thuế tối thiểu toàn cầu" từ 1/1/2024 – Sự thay
-              đổi luật chơi để giữ chân các "Đại bàng" FDI (Samsung, Intel,
+              Việt Nam áp dụng &quot;Thuế tối thiểu toàn cầu&quot; từ 1/1/2024 – Sự thay
+              đổi luật chơi để giữ chân các &quot;Đại bàng&quot; FDI (Samsung, Intel,
               LG...).
             </p>
             <div
@@ -474,12 +475,15 @@ export default function ChapterI1() {
                 border: "1px solid rgba(58, 106, 145, 0.2)",
               }}
             >
-              <img
+              <Image
                 src="/images/fdi-vietnam.jpg"
                 alt="Ví dụ thực tiễn: Thuế tối thiểu toàn cầu tại Việt Nam"
+                width={1200}
+                height={675}
                 style={{
                   width: "100%",
                   maxHeight: "400px",
+                  height: "auto",
                   display: "block",
                   objectFit: "contain",
                 }}

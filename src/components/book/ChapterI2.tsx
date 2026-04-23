@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 export default function ChapterI2() {
   const [openSections, setOpenSections] = useState<Set<number>>(
@@ -320,7 +321,7 @@ export default function ChapterI2() {
                 <li>
                   Đồng thời thực hiện chính sách quốc phòng{" "}
                   <strong style={{ color: "var(--chapter-text)" }}>
-                    "bốn không"
+                    &quot;bốn không&quot;
                   </strong>
                 </li>
               </ul>
@@ -365,11 +366,14 @@ export default function ChapterI2() {
                 background: "white",
               }}
             >
-              <img
+              <Image
                 src="/images/example-chapter2.jpg"
                 alt="Sơ đồ: Kết hợp chặt chẽ giữa Kinh tế - Quốc phòng, An ninh - Đối ngoại"
+                width={1200}
+                height={675}
                 style={{
                   width: "100%",
+                  height: "auto",
                   display: "block",
                   objectFit: "contain",
                 }}
