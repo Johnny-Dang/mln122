@@ -18,6 +18,10 @@
   --text-gold-deep: #5a4208;
   --text-gold-faint: #a68420;
 
+  /* Chương (nội dung sách) — màu chữ thống nhất, trừ bìa trước/sau */
+  --chapter-text: #3a6a91;
+  --chapter-text-muted: #5a7d9e;
+
   --book-cover: #ffffff;
   --book-page: #fafdfc;
 
@@ -531,6 +535,44 @@ h6 {
   margin-bottom: 1.5rem;
 }
 
+/* Các chương: màu #3a6a91 (giống Chương III), không ảnh hưởng Preface / bìa */
+.book-chapter {
+  color: var(--chapter-text);
+}
+
+.book-chapter .chapter-title {
+  color: var(--chapter-text) !important;
+}
+
+/* Tiêu đề chương: ưu tiên một dòng, dài thì tự xuống dòng 2+ */
+.chapter-title--wrap,
+.book-chapter h2.chapter-title {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1.3;
+  white-space: normal;
+  text-wrap: balance;
+}
+
+.book-chapter .chapter-title::after {
+  background: color-mix(in srgb, var(--chapter-text) 55%, var(--accent-amber) 45%);
+}
+
+.book-chapter .content-text,
+.book-chapter p.content-text {
+  color: var(--chapter-text) !important;
+}
+
+.book-chapter a:not([style*="color"]) {
+  color: var(--chapter-text);
+  text-decoration-color: color-mix(in srgb, var(--chapter-text) 45%, transparent);
+}
+
+.book-chapter .page-number {
+  color: color-mix(in srgb, var(--chapter-text) 58%, var(--chapter-text-muted)) !important;
+}
+
 /* Preface — bố cục đầy trang, đồng bộ tông sách */
 .preface-page {
   position: relative;
@@ -795,6 +837,16 @@ h1.preface-toc-main-title,
   margin-bottom: 0.4rem;
   text-align: justify;
   padding-left: 0.5rem;
+}
+
+.preface-toc-jump {
+  cursor: pointer;
+  transition: transform 0.18s ease, color 0.18s ease;
+}
+
+.preface-toc-jump:hover {
+  color: var(--text-gold-bright);
+  transform: translateX(2px);
 }
 
 .preface-toc-list li::before {
