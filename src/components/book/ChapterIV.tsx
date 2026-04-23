@@ -14,7 +14,7 @@ export default function ChapterIV() {
         <p className="chapter-iv-quote">
           &quot;VN thiết lập đối tác chiến lược toàn diện với Mỹ, TQ, Nhật, Hàn,
           Ấn Độ... Ngoại giao cây tre giúp VN tự chủ hay đang phụ thuộc tất
-          cả.&quot;
+          cả?&quot;
         </p>
       </div>
 

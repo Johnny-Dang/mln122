@@ -140,10 +140,14 @@ export default function Home() {
                   // +(index*2) in world space — the highest-index flipped sheet is closest.
                   transform: `rotateY(${isFlipped ? -180 : 0}deg) translateZ(${isFlipped ? -(index * 2) : (sheets.length - index) * 2}px)`,
                 }}
-                onClick={() => (isFlipped ? prevPage() : nextPage())}
+                onClick={(e) => {
+                  const target = e.target as HTMLElement;
+                  if (target.closest('button, a, input, select, textarea, [role="button"]')) return;
+                  isFlipped ? prevPage() : nextPage();
+                }}
               >
-                <div className="page-front" onClick={(e) => e.stopPropagation()}>{sheet.front}</div>
-                <div className="page-back" onClick={(e) => e.stopPropagation()}>{sheet.back}</div>
+                <div className="page-front">{sheet.front}</div>
+                <div className="page-back">{sheet.back}</div>
               </div>
             );
           })}

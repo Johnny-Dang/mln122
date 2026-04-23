@@ -16,7 +16,7 @@ const citations = [
   {
     index: 3,
     text: "Học viện Chính trị CAND (n.d.) Phải chăng chính sách đối ngoại giữ vững độc lập, tự chủ trong hội nhập quốc tế tại Đại hội XIII của Đảng là mới?.",
-    url: "https://hvctcand.bocongan.gov.vn/phai-chang-chinh-sach-doi-ngoai-giu-vung-doc-lap-tu-chu-trong-hoi-nhap-quoc-te-tai-dai-hoi-xiii-cua-dang-la-moi-3185.html",
+    url: "https://hvctcand.bocongan.gov.vn/phai-chang-chinh-sach-doi-ngoai-giu-vung-doc-lap-tu-chu-trong-hoi-nhap-quoc-te-tai-dai-hoi-xiii-cua-dang-chi-1686",
     accessed: "22 April 2026",
   },
 ];
