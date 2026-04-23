@@ -510,6 +510,22 @@ h6 {
   opacity: 0.95;
 }
 
+.cover-title-no-wrap {
+  white-space: nowrap;
+}
+
+.cover-subtitle--single-line {
+  white-space: nowrap;
+}
+
+.cover-group-info {
+  margin-top: 0.45rem;
+  font-size: 1rem;
+  color: var(--text-gold);
+  font-family: var(--font-sans);
+  letter-spacing: 0.03em;
+}
+
 .chapter-title {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
@@ -571,6 +587,30 @@ h6 {
 
 .book-chapter .page-number {
   color: color-mix(in srgb, var(--chapter-text) 58%, var(--chapter-text-muted)) !important;
+}
+
+.chapter-iv-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.chapter-iv-quote-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chapter-iv-quote {
+  margin-top: 0;
+  max-width: 92%;
+  font-size: 26px;
+  line-height: 1.7;
+  font-style: italic;
+  color: var(--chapter-text-muted);
+  font-family: var(--font-serif);
+  text-align: center;
 }
 
 /* Preface — bố cục đầy trang, đồng bộ tông sách */
