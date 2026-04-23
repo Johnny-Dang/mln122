@@ -1,11 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+@import "tailwindcss";
 
 :root {
   --bg-color: #f4f9f9;
-  --text-main: #2c3e50;
-  --text-light: #7f8c8d;
+  /* Nền ngoài (không gian quanh cuốn sách) */
+  --outer-bg-top: #3d3d3d;
+  --outer-bg-mid: #2a2a2a;
+  --outer-bg-deep: #1c1c1c;
+  --outer-vignette: rgba(0, 0, 0, 0.45);
+  /* Chữ toàn app & sách — tông vàng / vàng sẫm (đủ tương phản nền sáng) */
+  --text-main: #6b4f0a;
+  --text-light: #8a6f20;
   --accent-blue: #00a8ff;
   --accent-amber: #ffd54f;
+  --text-gold: #9d7a0a;
+  --text-gold-bright: #c9a012;
+  --text-gold-deep: #5a4208;
+  --text-gold-faint: #a68420;
 
   --book-cover: #ffffff;
   --book-page: #fafdfc;
@@ -19,14 +30,17 @@
   --font-abhaya: "Abhaya Libre", serif;
 }
 
-.title-abhaya {
+/* Bìa: vàng rõ (Tailwind/heading có thể ghi đè — dùng !important) */
+.title-abhaya,
+h1.title-abhaya {
   font-family: var(--font-abhaya);
   font-size: 3.5rem;
   line-height: 1.2;
-  color: var(--text-main);
+  color: var(--text-gold-bright) !important;
   font-weight: 700;
   text-align: center;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-shadow: 0 1px 0 color-mix(in srgb, var(--accent-amber) 25%, transparent),
+    0 4px 12px rgba(201, 160, 18, 0.18);
 }
 
 * {
@@ -35,13 +49,26 @@
   padding: 0;
 }
 
+html {
+  background: var(--outer-bg-deep);
+}
+
 body {
-  background: linear-gradient(135deg, #f4f9f9 0%, #e0f2f1 100%);
   color: var(--text-main);
   font-family: var(--font-sans);
   line-height: 1.7;
   min-height: 100vh;
   overflow-x: hidden;
+  /* Charcoal: nổi bật khối sách sáng ở giữa + vignette nhẹ */
+  background-color: var(--outer-bg-mid);
+  background-image: radial-gradient(
+      ellipse 85% 70% at 50% 48%,
+      color-mix(in srgb, var(--outer-bg-top) 55%, #6a6a6a) 0%,
+      transparent 62%
+    ),
+    radial-gradient(120% 100% at 50% 100%, var(--outer-vignette) 0%, transparent 42%),
+    linear-gradient(165deg, var(--outer-bg-top) 0%, var(--outer-bg-mid) 38%, var(--outer-bg-deep) 100%);
+  background-attachment: fixed;
 }
 
 h1,
@@ -62,9 +89,15 @@ h6 {
   perspective: 2500px;
   position: relative;
   overflow: hidden;
+  /* Tách lớp với nền charcoal */
+  background: radial-gradient(
+    ellipse 70% 55% at 50% 50%,
+    color-mix(in srgb, var(--outer-bg-mid) 20%, transparent) 0%,
+    transparent 70%
+  );
 }
 
-/* Ambient glow effects behind book */
+/* Bụi sáng quanh sách (vàng) — tăng độ tương phản với nền tối */
 .flipbook-container::before {
   content: "";
   position: absolute;
@@ -72,29 +105,33 @@ h6 {
   height: 600px;
   background: radial-gradient(
     circle,
-    rgba(0, 168, 255, 0.15) 0%,
+    rgba(201, 160, 18, 0.22) 0%,
+    rgba(255, 213, 79, 0.06) 40%,
     transparent 60%
   );
   top: 50%;
   left: 30%;
   transform: translate(-50%, -50%);
   z-index: 0;
+  pointer-events: none;
 }
 
 .flipbook-container::after {
   content: "";
   position: absolute;
-  width: 500px;
-  height: 500px;
+  width: 520px;
+  height: 520px;
   background: radial-gradient(
     circle,
-    rgba(255, 213, 79, 0.15) 0%,
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(255, 213, 79, 0.1) 35%,
     transparent 60%
   );
   top: 50%;
-  right: 10%;
+  right: 8%;
   transform: translate(0, -50%);
   z-index: 0;
+  pointer-events: none;
 }
 
 /* Right Progress Bar */
@@ -120,19 +157,19 @@ h6 {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: rgba(44, 62, 80, 0.2);
+  background: rgba(107, 79, 10, 0.2);
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
 }
 
 .progress-dot:hover {
-  background: rgba(44, 62, 80, 0.4);
+  background: rgba(201, 160, 18, 0.45);
 }
 
 .progress-dot.active {
-  background: var(--accent-blue);
-  box-shadow: 0 0 12px var(--accent-blue);
+  background: var(--text-gold-bright);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent-amber) 70%, var(--text-gold-bright));
   transform: scale(1.4);
 }
 
@@ -175,6 +212,10 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Viền sáng + bóng đổ: cuốn sách “bật” khỏi nền charcoal */
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 40px 80px -16px rgba(0, 0, 0, 0.65),
+    0 0 100px -30px rgba(201, 160, 18, 0.12);
 }
 
 .book-wrapper {
@@ -346,7 +387,7 @@ h6 {
 .cover-frame-outer {
   position: absolute;
   inset: 0.75rem;
-  border: 2px solid rgba(44, 62, 80, 0.45);
+  border: 2px solid color-mix(in srgb, var(--text-gold-deep) 45%, #8a6b12 20%);
   border-radius: 22px;
   pointer-events: none;
   z-index: 2;
@@ -355,8 +396,8 @@ h6 {
     0 1px 1px rgba(0, 0, 0, 0.04),
     0 6px 16px rgba(0, 0, 0, 0.07),
     0 20px 40px -12px rgba(0, 0, 0, 0.12),
-    0 0 48px -8px rgba(0, 168, 255, 0.14),
-    0 0 40px -12px rgba(255, 213, 79, 0.12);
+    0 0 48px -8px rgba(201, 160, 18, 0.18),
+    0 0 40px -12px rgba(255, 213, 79, 0.16);
   background: linear-gradient(
     155deg,
     rgba(255, 255, 255, 0.5) 0%,
@@ -459,15 +500,16 @@ h6 {
 
 .cover-subtitle {
   font-size: 1.1rem;
-  color: var(--text-light);
+  color: var(--text-gold) !important;
   font-style: italic;
   font-family: var(--font-serif);
+  opacity: 0.95;
 }
 
 .chapter-title {
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
-  color: var(--accent-blue);
+  color: var(--text-gold-bright);
   position: relative;
   display: inline-block;
 }
@@ -489,11 +531,295 @@ h6 {
   margin-bottom: 1.5rem;
 }
 
+/* Preface — bố cục đầy trang, đồng bộ tông sách */
+.preface-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+  width: 100%;
+  padding: 0.25rem 0.15rem 0 0;
+  box-sizing: border-box;
+  gap: 1.5rem;
+}
+
+.preface-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 0 0 auto;
+}
+
+.preface-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-gold-bright);
+  font-family: var(--font-sans);
+}
+
+.preface-header-line {
+  width: 100%;
+  max-width: 4.5rem;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent-amber) 0%, var(--text-gold-bright) 100%);
+  opacity: 0.9;
+}
+
+.preface-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem 1.15rem 1.35rem 1.35rem;
+  border-radius: 0 12px 12px 0;
+  background: linear-gradient(
+    110deg,
+    rgba(201, 160, 18, 0.08) 0%,
+    rgba(255, 255, 255, 0.4) 42%,
+    rgba(255, 213, 79, 0.08) 100%
+  );
+  border: 1px solid color-mix(in srgb, var(--text-gold) 20%, transparent);
+  border-left: 4px solid var(--accent-amber);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+.preface-kicker {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-family: var(--font-sans);
+  margin: 0;
+}
+
+.preface-topic {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.1vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.32;
+  color: var(--text-main);
+  text-align: left;
+}
+
+.preface-deck {
+  margin: 0.35rem 0 0 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-main);
+  text-align: justify;
+  opacity: 0.95;
+  border-top: 1px dashed color-mix(in srgb, var(--text-gold) 28%, transparent);
+  padding-top: 1rem;
+}
+
+.preface-pillars {
+  margin: 0.25rem 0 0 0;
+  padding: 0.85rem 0 0.2rem 1.1rem;
+  border-top: 1px solid color-mix(in srgb, var(--text-gold) 20%, transparent);
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.preface-pillars li {
+  position: relative;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-light);
+  padding-left: 0.1rem;
+}
+
+.preface-pillars li::before {
+  content: "◆";
+  position: absolute;
+  left: -0.9rem;
+  top: 0.05rem;
+  font-size: 0.55rem;
+  color: var(--accent-amber);
+}
+
+.preface-footer {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.preface-ornament {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 12rem;
+}
+
+.preface-ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-amber), transparent);
+  opacity: 0.7;
+}
+
+.preface-ornament-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-main);
+  box-shadow: 0 0 0 1px var(--accent-amber);
+  flex-shrink: 0;
+}
+
+/* Mục lục dài: cuộn trong trang, giữ số trang dưới cùng */
+.preface-page--toc {
+  gap: 0.5rem;
+  min-height: 0;
+}
+
+.preface-page--toc .preface-eyebrow {
+  font-size: 18px;
+  color: var(--text-gold-bright);
+}
+
+/* Tiêu đề mục lục — không dùng class Tailwind text-* (dễ trùng cascade) */
+h1.preface-toc-main-title,
+.preface-toc-main-title {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--text-gold-bright) !important;
+  margin: 0.15rem 0 0.1rem;
+  padding: 0.35rem 0.2rem 0.5rem;
+  font-family: var(--font-sans);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-amber) 45%, transparent);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent-amber) 12%, transparent) 0%, transparent 100%);
+  border-radius: 0 0 8px 8px;
+  flex: 0 0 auto;
+  -webkit-text-fill-color: var(--text-gold-bright);
+}
+
+.preface-toc-scroll {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5rem 0.4rem 0.75rem 0.55rem;
+  margin-right: 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
+  border-radius: 0 8px 8px 0;
+  border: 1px solid color-mix(in srgb, var(--text-gold) 18%, transparent);
+  border-left: 3px solid var(--accent-amber);
+  background: linear-gradient(
+    115deg,
+    rgba(201, 160, 18, 0.06) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 213, 79, 0.06) 100%
+  );
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) inset;
+}
+
+.preface-toc-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.preface-toc-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+}
+.preface-toc-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--text-gold-bright) 0%, #8a6b10 100%);
+  border-radius: 4px;
+}
+.preface-toc-scroll:focus-visible {
+  outline: 2px solid var(--text-gold-bright);
+  outline-offset: 2px;
+}
+
+.preface-toc-block {
+  margin-bottom: 0.55rem;
+}
+.preface-toc-block:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 0.25rem;
+}
+
+.preface-toc-h2 {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.4;
+  color: var(--text-gold-bright);
+  margin: 0.55rem 0 0.35rem;
+  font-family: var(--font-sans);
+  text-align: left;
+}
+.preface-toc-h2:first-child,
+.preface-toc-block:first-of-type .preface-toc-h2:first-of-type {
+  margin-top: 0.2rem;
+}
+
+.preface-toc-h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-gold);
+  margin: 0.5rem 0 0.28rem;
+  font-family: var(--font-sans);
+  text-align: left;
+  padding-left: 0.1rem;
+  border-left: 2px solid color-mix(in srgb, var(--accent-amber) 55%, var(--text-gold) 20%);
+  padding-left: 0.5rem;
+}
+
+.preface-toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 0.4rem;
+}
+
+.preface-toc-list li {
+  position: relative;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text-gold);
+  margin-bottom: 0.4rem;
+  text-align: justify;
+  padding-left: 0.5rem;
+}
+
+.preface-toc-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  font-size: 0.65em;
+  color: var(--text-gold-bright);
+  line-height: 1;
+}
+.preface-toc-list--tight li {
+  text-align: left;
+}
+
+.preface-toc-list li strong {
+  color: var(--text-gold-deep);
+  font-weight: 700;
+}
+
 .page-number {
   position: absolute;
   bottom: 1.5rem;
   font-size: 0.9rem;
-  color: #bdc3c7;
+  color: var(--text-gold-faint);
   font-family: var(--font-sans);
 }
 
@@ -505,12 +831,25 @@ h6 {
   left: 2.5rem;
 }
 
+/* Số trang cuối mục lục — cùng cuộn với nội dung (sau .page-number để thắng cascade) */
+.page-number.page-number--preface-scroll {
+  position: static;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  margin: 1.1rem 0 0.15rem 0.05rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid color-mix(in srgb, var(--accent-amber) 35%, transparent);
+  text-align: left;
+  color: var(--text-gold-faint);
+}
+
 /* Interactive Elements - Glassmorphism */
 .interactive-element {
   margin-top: 2rem;
   padding: 1rem 1.5rem;
-  background: rgba(0, 168, 255, 0.05);
-  border: 1px solid rgba(0, 168, 255, 0.2);
+  background: color-mix(in srgb, var(--text-gold-bright) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--text-gold-bright) 25%, transparent);
   border-radius: 1rem;
   display: flex;
   align-items: center;
@@ -521,7 +860,7 @@ h6 {
 }
 
 .interactive-element:hover {
-  background: rgba(0, 168, 255, 0.1);
+  background: color-mix(in srgb, var(--text-gold-bright) 15%, transparent);
   transform: translateY(-2px);
 }
 
@@ -577,18 +916,18 @@ h6 {
 /* Controls */
 .controls {
   position: fixed;
-  bottom: 2rem;
+  bottom: 1rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
-  padding: 0.8rem 2rem;
+  padding: 0.4rem 1.2rem;
   border-radius: 3rem;
   border: 1px solid var(--glass-border);
-  box-shadow: 0 8px 32px var(--shadow-color);
+  box-shadow: 0 4px 16px var(--shadow-color);
   z-index: 100;
 }
 
@@ -597,16 +936,16 @@ h6 {
   border: none;
   font-family: var(--font-sans);
   font-weight: 600;
-  color: var(--accent-blue);
+  color: var(--text-gold-bright);
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.8rem;
   transition: all 0.3s;
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 2rem;
 }
 
 .nav-btn:hover:not(:disabled) {
-  background: rgba(0, 168, 255, 0.1);
+  background: color-mix(in srgb, var(--text-gold-bright) 14%, transparent);
 }
 
 .nav-btn:disabled {
@@ -618,5 +957,5 @@ h6 {
 .page-indicator {
   font-weight: 600;
   color: var(--text-main);
-  font-size: 0.95rem;
+  font-size: 0.78rem;
 }

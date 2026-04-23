@@ -16,9 +16,9 @@ export default function Chapter1() {
       title: "1. Nhận thức: Cơ hội & Thách thức",
       content: (
         <ul style={{ paddingLeft: '0', margin: '0', listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Góc nhìn toàn diện:</strong> Không chỉ thấy "Màu hồng" (thị trường, vốn, công nghệ).</li>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Nhận diện rủi ro:</strong> Biến động tài chính, an ninh, văn hóa.</li>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Tránh 2 thái cực:</strong> Ảo tưởng &rarr; Mất cảnh giác. Sợ hãi &rarr; Khép kín, thụ động.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Góc nhìn toàn diện:</strong> Không chỉ thấy "Màu hồng" (thị trường, vốn, công nghệ).</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Nhận diện rủi ro:</strong> Biến động tài chính, an ninh, văn hóa.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Tránh 2 thái cực:</strong> Ảo tưởng &rarr; Mất cảnh giác. Sợ hãi &rarr; Khép kín, thụ động.</li>
         </ul>
       )
     },
@@ -27,9 +27,9 @@ export default function Chapter1() {
       title: "2. Chiến lược & Lộ trình hội nhập",
       content: (
         <ul style={{ paddingLeft: '0', margin: '0', listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Quy hoạch tổng thể:</strong> Đánh giá đúng thực lực (điểm mạnh/yếu).</li>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Bám sát xu hướng:</strong> Thích ứng với các FTA thế hệ mới, CPTPP.</li>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Tính linh hoạt:</strong> Điều chỉnh kịp thời, ứng phó rủi ro hiệu quả.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Quy hoạch tổng thể:</strong> Đánh giá đúng thực lực (điểm mạnh/yếu).</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Bám sát xu hướng:</strong> Thích ứng với các FTA thế hệ mới, CPTPP.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Tính linh hoạt:</strong> Điều chỉnh kịp thời, ứng phó rủi ro hiệu quả.</li>
         </ul>
       )
     },
@@ -38,9 +38,9 @@ export default function Chapter1() {
       title: "3. Chủ động tham gia & Thực thi cam kết",
       content: (
         <ul style={{ paddingLeft: '0', margin: '0', listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Hội nhập sâu rộng:</strong> WTO, ASEAN, APEC...</li>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Tuân thủ "Luật chơi chung":</strong> Cắt giảm thuế quan, mở cửa thị trường.</li>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Mục tiêu:</strong> Tận dụng cơ hội thương mại & Nâng tầm uy tín quốc gia.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Hội nhập sâu rộng:</strong> WTO, ASEAN, APEC...</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Tuân thủ "Luật chơi chung":</strong> Cắt giảm thuế quan, mở cửa thị trường.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Mục tiêu:</strong> Tận dụng cơ hội thương mại & Nâng tầm uy tín quốc gia.</li>
         </ul>
       )
     },
@@ -49,9 +49,9 @@ export default function Chapter1() {
       title: "4. Hoàn thiện Thể chế & Pháp luật",
       content: (
         <ul style={{ paddingLeft: '0', margin: '0', listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Yêu cầu tiên quyết:</strong> Tương đồng với thể chế kinh tế quốc tế.</li>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Vai trò Nhà nước:</strong> Rà soát, đồng bộ luật (Đầu tư, Thương mại, Doanh nghiệp...).</li>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Môi trường kinh doanh:</strong> Minh bạch, cạnh tranh lành mạnh, xóa rào cản độc quyền.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Yêu cầu tiên quyết:</strong> Tương đồng với thể chế kinh tế quốc tế.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Vai trò Nhà nước:</strong> Rà soát, đồng bộ luật (Đầu tư, Thương mại, Doanh nghiệp...).</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Môi trường kinh doanh:</strong> Minh bạch, cạnh tranh lành mạnh, xóa rào cản độc quyền.</li>
         </ul>
       )
     },
@@ -60,9 +60,9 @@ export default function Chapter1() {
       title: "5. Nâng cao Năng lực cạnh tranh",
       content: (
         <ul style={{ paddingLeft: '0', margin: '0', listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Nguy cơ:</strong> Hội nhập kém &rarr; Thua ngay trên "sân nhà".</li>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Giải pháp vĩ mô:</strong> Hỗ trợ chuỗi cung ứng, đào tạo nhân lực, pháp lý.</li>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Giải pháp vi mô:</strong> Đổi mới công nghệ, nâng cấp quản trị & nhân sự.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Nguy cơ:</strong> Hội nhập kém &rarr; Thua ngay trên "sân nhà".</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Giải pháp vĩ mô:</strong> Hỗ trợ chuỗi cung ứng, đào tạo nhân lực, pháp lý.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Giải pháp vi mô:</strong> Đổi mới công nghệ, nâng cấp quản trị & nhân sự.</li>
         </ul>
       )
     },
@@ -71,9 +71,9 @@ export default function Chapter1() {
       title: "6. Xây dựng Kinh tế Độc lập - Tự chủ",
       content: (
         <ul style={{ paddingLeft: '0', margin: '0', listStyleType: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Nguyên tắc cốt lõi:</strong> Hội nhập nhưng không phụ thuộc, không bị áp đặt.</li>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Định hướng:</strong> Chủ động hoàn toàn về đường lối phát triển.</li>
-          <li><strong style={{ color: 'var(--accent-blue)' }}>• Phát triển toàn diện:</strong> Gắn kết Kinh tế &rarr; Quốc phòng, An ninh & Đối ngoại.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Nguyên tắc cốt lõi:</strong> Hội nhập nhưng không phụ thuộc, không bị áp đặt.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Định hướng:</strong> Chủ động hoàn toàn về đường lối phát triển.</li>
+          <li><strong style={{ color: 'var(--text-gold-bright)' }}>• Phát triển toàn diện:</strong> Gắn kết Kinh tế &rarr; Quốc phòng, An ninh & Đối ngoại.</li>
         </ul>
       )
     }
@@ -107,12 +107,12 @@ export default function Chapter1() {
               key={section.id} 
               style={{
                 flexShrink: 0,
-                background: isOpen ? 'rgba(0, 168, 255, 0.05)' : 'var(--glass-bg)',
-                border: `1px solid ${isOpen ? 'rgba(0, 168, 255, 0.3)' : 'var(--glass-border)'}`,
+                background: isOpen ? 'rgba(201, 160, 18, 0.05)' : 'var(--glass-bg)',
+                border: `1px solid ${isOpen ? 'rgba(201, 160, 18, 0.3)' : 'var(--glass-border)'}`,
                 borderRadius: '12px',
                 overflow: 'hidden',
                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: isOpen ? '0 4px 15px rgba(0, 168, 255, 0.08)' : '0 2px 5px rgba(0,0,0,0.02)',
+                boxShadow: isOpen ? '0 4px 15px rgba(201, 160, 18, 0.08)' : '0 2px 5px rgba(0,0,0,0.02)',
               }}
             >
               <div 
@@ -124,7 +124,7 @@ export default function Chapter1() {
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   fontWeight: isOpen ? '700' : '600',
-                  color: isOpen ? 'var(--accent-blue)' : 'var(--text-main)',
+                  color: isOpen ? 'var(--text-gold-bright)' : 'var(--text-main)',
                   userSelect: 'none'
                 }}
               >
@@ -133,14 +133,14 @@ export default function Chapter1() {
                   transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', 
                   transition: 'transform 0.3s ease',
                   fontSize: '0.8rem',
-                  color: isOpen ? 'var(--accent-blue)' : 'var(--text-light)',
+                  color: isOpen ? 'var(--text-gold-bright)' : 'var(--text-light)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '24px',
                   height: '24px',
                   borderRadius: '50%',
-                  background: isOpen ? 'rgba(0, 168, 255, 0.1)' : 'transparent'
+                  background: isOpen ? 'rgba(201, 160, 18, 0.1)' : 'transparent'
                 }}>
                   ▼
                 </span>
@@ -160,7 +160,7 @@ export default function Chapter1() {
               >
                 <div style={{ 
                   paddingTop: '0.8rem', 
-                  borderTop: `1px dashed ${isOpen ? 'rgba(0, 168, 255, 0.2)' : 'rgba(0,0,0,0.1)'}` 
+                  borderTop: `1px dashed ${isOpen ? 'rgba(201, 160, 18, 0.2)' : 'rgba(0,0,0,0.1)'}` 
                 }}>
                   {section.content}
                 </div>
@@ -178,9 +178,9 @@ export default function Chapter1() {
             }}
             style={{
               padding: '0.6rem 1.2rem',
-              background: showExample ? 'var(--accent-blue)' : 'transparent',
-              color: showExample ? 'white' : 'var(--accent-blue)',
-              border: '1px solid var(--accent-blue)',
+              background: showExample ? 'var(--text-gold-bright)' : 'transparent',
+              color: showExample ? 'white' : 'var(--text-gold-bright)',
+              border: '1px solid var(--text-gold-bright)',
               borderRadius: '20px',
               cursor: 'pointer',
               fontWeight: 'bold',
@@ -188,7 +188,7 @@ export default function Chapter1() {
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
-              boxShadow: showExample ? '0 4px 10px rgba(0, 168, 255, 0.3)' : 'none',
+              boxShadow: showExample ? '0 4px 10px rgba(201, 160, 18, 0.3)' : 'none',
               fontFamily: 'inherit',
               fontSize: '0.9rem'
             }}
@@ -211,19 +211,19 @@ export default function Chapter1() {
           flexShrink: 0
         }}>
           <div style={{
-            background: 'linear-gradient(145deg, rgba(0, 168, 255, 0.05) 0%, rgba(0, 168, 255, 0.15) 100%)',
-            border: '1px solid rgba(0, 168, 255, 0.4)',
+            background: 'linear-gradient(145deg, rgba(201, 160, 18, 0.05) 0%, rgba(201, 160, 18, 0.15) 100%)',
+            border: '1px solid rgba(201, 160, 18, 0.4)',
             borderRadius: '12px',
             padding: '1.2rem',
             position: 'relative',
-            boxShadow: '0 4px 15px rgba(0, 168, 255, 0.15)',
+            boxShadow: '0 4px 15px rgba(201, 160, 18, 0.15)',
           }}>
              <div style={{ 
                position: 'absolute', 
                top: '1.2rem', 
                right: '1.2rem', 
                fontSize: '0.75rem', 
-               color: 'var(--accent-blue)', 
+               color: 'var(--text-gold-bright)', 
                fontStyle: 'italic',
                opacity: 0.8,
                maxWidth: '120px',
@@ -233,7 +233,7 @@ export default function Chapter1() {
                (Trung tâm WTO và Hội nhập, 2023)
              </div>
              <h4 style={{ 
-               color: 'var(--accent-blue)', 
+               color: 'var(--text-gold-bright)', 
                marginTop: 0, 
                marginBottom: '0.8rem', 
                fontSize: '1.05rem', 
@@ -259,7 +259,7 @@ export default function Chapter1() {
                borderRadius: '8px',
                overflow: 'hidden',
                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-               border: '1px solid rgba(0, 168, 255, 0.2)'
+               border: '1px solid rgba(201, 160, 18, 0.2)'
              }}>
                <img 
                  src="/images/fdi-vietnam.jpg" 
@@ -287,11 +287,11 @@ export default function Chapter1() {
           border-radius: 10px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(0, 168, 255, 0.2);
+          background: rgba(201, 160, 18, 0.2);
           border-radius: 10px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(0, 168, 255, 0.4);
+          background: rgba(201, 160, 18, 0.4);
         }
       `}} />
     </div>
