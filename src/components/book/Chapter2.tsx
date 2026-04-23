@@ -186,16 +186,30 @@ export default function Chapter2() {
              }}>
                 <span style={{ fontSize: '1.2rem' }}>📌</span> 3. Thực tiễn Việt Nam (Example)
              </h4>
-             <p style={{ 
-               margin: 0, 
+             <div style={{ 
                color: 'var(--text-main)', 
                lineHeight: '1.5', 
                fontWeight: '500',
                fontSize: '0.95rem',
-               marginBottom: '1rem'
+               marginBottom: '1.2rem'
              }}>
-               Mô hình kết hợp chặt chẽ giữa Kinh tế - Quốc phòng, An ninh - Đối ngoại nhằm bảo vệ chủ quyền, duy trì ổn định, tạo thế cân bằng và thúc đẩy phát triển bền vững.
-             </p>
+               <ul style={{ paddingLeft: '1.2rem', margin: '0 0 0.8rem 0', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                 <li>Mở rộng quan hệ với các nước lớn (Mỹ, Trung Quốc…)</li>
+                 <li>Đồng thời thực hiện chính sách quốc phòng <strong style={{ color: 'var(--accent-blue)' }}>"bốn không"</strong></li>
+               </ul>
+               <div style={{ 
+                 background: 'rgba(0, 168, 255, 0.08)', 
+                 padding: '0.8rem 1rem', 
+                 borderRadius: '8px', 
+                 borderLeft: '4px solid var(--accent-blue)' 
+               }}>
+                 <strong style={{ color: 'var(--accent-blue)', display: 'block', marginBottom: '0.3rem' }}>→ Kết hợp:</strong>
+                 <ul style={{ paddingLeft: '1.2rem', margin: 0, display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                   <li>Phát triển kinh tế (hợp tác, thương mại)</li>
+                   <li>Giữ độc lập – tự chủ – cân bằng chiến lược</li>
+                 </ul>
+               </div>
+             </div>
              <div style={{
                width: '100%',
                borderRadius: '8px',
