@@ -1,12 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 export default function ChapterIV() {
-  const [activeIdx, setActiveIdx] = useState<number | null>(null);
-
-  const toggle = (i: number) => setActiveIdx((prev) => (prev === i ? null : i));
-
   return (
     <div className="book-chapter">
       <h2 className="chapter-title chapter-title--wrap">
@@ -18,7 +14,7 @@ export default function ChapterIV() {
         Việt Nam đã thiết lập quan hệ đối tác chiến lược toàn diện với nhiều
         cường quốc lớn như <strong>Hoa Kỳ, Trung Quốc, Nhật Bản</strong> và{" "}
         <strong>Hàn Quốc</strong>. Điều này đặt ra một câu hỏi quan trọng: liệu
-        ngoại giao <em>"cây tre"</em> có thực sự giúp Việt Nam tăng cường tự chủ
+        ngoại giao <em>&quot;cây tre&quot;</em> có thực sự giúp Việt Nam tăng cường tự chủ
         chiến lược, hay vô tình tạo ra sự phụ thuộc vào nhiều đối tác cùng lúc?
         Khi các nước lớn cạnh tranh lợi ích ngày càng gay gắt, việc duy trì cân
         bằng quan hệ liệu có bền vững hay sẽ khiến Việt Nam rơi vào thế bị động?
@@ -39,8 +35,8 @@ export default function ChapterIV() {
           textAlign: "center",
         }}
       >
-        "Cây tre uốn mình trước gió, nhưng không gãy — đó là bản lĩnh của một
-        dân tộc."
+        &quot;Cây tre uốn mình trước gió, nhưng không gãy — đó là bản lĩnh của một
+        dân tộc.&quot;
       </p>
 
       <div className="page-number">Trang 8</div>

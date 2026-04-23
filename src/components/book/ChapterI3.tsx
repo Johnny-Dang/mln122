@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 export default function ChapterI3() {
   const [openSections, setOpenSections] = useState<Set<number>>(
@@ -75,7 +76,7 @@ export default function ChapterI3() {
             <strong style={{ color: colorAccent }}>
               • Quan hệ biện chứng:
             </strong>{" "}
-            Thể hiện rõ mối quan hệ giữa "Phụ thuộc" (hội nhập) và "Tự chủ" (độc
+            Thể hiện rõ mối quan hệ giữa &quot;Phụ thuộc&quot; (hội nhập) và &quot;Tự chủ&quot; (độc
             lập).
           </li>
           <li
@@ -419,7 +420,7 @@ export default function ChapterI3() {
                       flex: "1 1 120px",
                     }}
                   >
-                    🤝 "Cùng có lợi"
+                    🤝 &quot;Cùng có lợi&quot;
                   </div>
                   <div
                     style={{
@@ -464,11 +465,14 @@ export default function ChapterI3() {
                   marginTop: "0.5rem",
                 }}
               >
-                <img
+                <Image
                   src="/images/example-chapter3.jpg"
                   alt="Ví dụ thực tiễn: Đa dạng hóa thị trường và giữ độc lập kinh tế"
+                  width={1200}
+                  height={675}
                   style={{
                     width: "100%",
+                    height: "auto",
                     display: "block",
                     objectFit: "contain",
                   }}

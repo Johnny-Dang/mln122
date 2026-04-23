@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 /**
  * ChapterIII1 — Sơ đồ lợi ích kinh tế và mức độ phụ thuộc
@@ -69,12 +70,15 @@ export default function ChapterIII1() {
           minHeight: 0,
         }}
       >
-        <img
+        <Image
           src="/images/Screenshot 2026-04-23 155354.png"
           alt="Sơ đồ lợi ích kinh tế và mức độ phụ thuộc của Việt Nam theo đối tác"
+          width={1200}
+          height={675}
           style={{
             width: "100%",
             maxHeight: "100%",
+            height: "auto",
             objectFit: "contain",
             borderRadius: "8px",
             boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
